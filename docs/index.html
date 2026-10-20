@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-T6B7FF6');</script>
+  <!-- End Google Tag Manager -->
+
+  <title>Vasto Brasília | Unidades</title>
+  <meta name="description" content="Vasto 108 Sul e Vasto Brasília Shopping: reservas, cardápio e delivery.">
+  <link rel="canonical" href="https://vastobsb.cocobambubsb.com.br/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vastobsb.cocobambubsb.com.br/">
+  <meta property="og:title" content="Vasto Brasília">
+  <meta property="og:description" content="Reservas, cardápio e delivery das unidades Vasto em Brasília.">
+  <meta property="og:image" content="https://vastobsb.cocobambubsb.com.br/assets/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0d0a07">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Tokens da LP de eventos do Vasto (vasto.cocobambubsb.com.br) */
+    :root {
+      --ink: oklch(14% .015 60);
+      --ink-2: oklch(19% .016 60);
+      --cream: oklch(97% .01 75);
+      --gold: oklch(72% .11 75);
+      --gold-tint: oklch(72% .11 75 / .08);
+      --muted: oklch(97% .01 75 / .6);
+      --line: oklch(97% .01 75 / .12);
+      --line-gold: oklch(72% .11 75 / .45);
+      --font: "General Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --ease: cubic-bezier(.22, .61, .36, 1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; background: var(--ink); }
+    body {
+      min-height: 100vh; color: var(--cream); font-family: var(--font); font-size: 16px; line-height: 1.5;
+      -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent; overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    figure { margin: 0; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; }
+    svg { width: 1em; height: 1em; flex: none; }
+    :focus-visible { outline: 1px solid var(--gold); outline-offset: 3px; }
+    .container { width: 100%; max-width: 64rem; margin: 0 auto; padding: 0 1.25rem; }
+
+    /* Fundo: brilho âmbar fixo + luz que acompanha o mouse + poeira dourada esparsa */
+    .ambient { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden;
+      background: radial-gradient(70rem 42rem at 50% -12rem, oklch(30% .055 65 / .6), transparent 70%), var(--ink); }
+    .ambient .spot { position: absolute; inset: 0; opacity: 0; transition: opacity .8s ease;
+      background: radial-gradient(560px circle at var(--mx, 50%) var(--my, 30%), oklch(72% .11 75 / .07), transparent 65%); }
+    .ambient.lit .spot { opacity: 1; }
+    #dust { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+    /* Rótulo com fios dourados que se desenham na entrada */
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 14px;
+      font-size: 11px; letter-spacing: .32em; text-transform: uppercase; color: var(--gold);
+    }
+    .eyebrow::before, .eyebrow::after {
+      content: ""; width: 32px; height: 1px; background: currentColor; opacity: .7;
+      transform: scaleX(0); animation: draw 1.2s var(--ease) .5s forwards;
+    }
+    .eyebrow::before { transform-origin: right; }
+    .eyebrow::after { transform-origin: left; }
+    @keyframes draw { to { transform: scaleX(1); } }
+
+    /* Topo */
+    .hero { padding: 56px 0 8px; text-align: center; }
+    .hero .logo { width: 150px; margin: 0 auto 26px; }
+    .hero h1 { margin-top: 18px; font-size: clamp(34px, 8vw, 54px); font-weight: 400; line-height: 1.05; letter-spacing: -.02em; }
+    .hero h1 span { color: var(--gold); }
+
+    /* Botões em coluna: preenchimento dourado que entra da esquerda no hover */
+    .links { display: grid; gap: 10px; max-width: 34rem; margin: 32px auto 0; }
+    .link {
+      position: relative; overflow: hidden; isolation: isolate;
+      display: flex; align-items: center; gap: 16px; min-height: 60px; padding: 0 22px;
+      border: 1px solid var(--line-gold); background: oklch(14% .015 60 / .55);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      font-size: 12px; font-weight: 500; letter-spacing: .26em; text-transform: uppercase;
+      transition: color .5s var(--ease), border-color .5s var(--ease);
+    }
+    .link::before {
+      content: ""; position: absolute; inset: 0; z-index: -1; background: var(--gold);
+      transform: scaleX(0); transform-origin: left; transition: transform .6s var(--ease);
+    }
+    .link > svg:first-child { font-size: 18px; color: var(--gold); transition: color .5s var(--ease); }
+    .link .label { flex: 1; }
+    .link .go { font-size: 16px; color: var(--gold); transition: transform .5s var(--ease), color .5s var(--ease); }
+    .link:hover { color: var(--ink); border-color: var(--gold); }
+    .link:hover::before { transform: scaleX(1); }
+    .link:hover > svg, .link:hover .go { color: var(--ink); }
+    .link:hover .go { transform: translateX(5px); }
+    /* Destaque: dourado fixo com um reflexo lento que atravessa o botão */
+    .link.featured { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+    .link.featured::before { background: var(--cream); }
+    .link.featured > svg, .link.featured .go { color: var(--ink); }
+    .link.featured::after {
+      content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+      background: linear-gradient(105deg, transparent 38%, oklch(100% 0 0 / .45) 50%, transparent 62%);
+      transform: translateX(-120%); animation: shine 6s ease-in-out 1.6s infinite;
+    }
+    @keyframes shine { 0%, 70% { transform: translateX(-120%); } 90%, 100% { transform: translateX(120%); } }
+
+    /* Unidades */
+    .section { padding: 56px 0 64px; }
+    .section-head { text-align: center; margin-bottom: 28px; }
+    .units { display: grid; gap: 40px; align-items: start; }
+    @media (min-width: 760px) { .units { grid-template-columns: 1fr 1fr; gap: 28px; } }
+    .unit {
+      scroll-margin-top: 24px;
+      transform: perspective(1100px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+      transition: transform .6s var(--ease);
+    }
+    .unit.tilting { transition: transform .15s ease-out; }
+    .unit-media { position: relative; aspect-ratio: 3 / 2; overflow: hidden; background: var(--ink-2); }
+    .unit-media::after {
+      content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+      background: linear-gradient(180deg, transparent 45%, oklch(10% .01 60 / .85));
+    }
+    /* Reflexo de luz que segue o mouse sobre a foto */
+    .unit-media .glare {
+      position: absolute; inset: 0; z-index: 2; pointer-events: none; opacity: 0; transition: opacity .6s ease;
+      background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), oklch(85% .08 80 / .16), transparent 60%);
+    }
+    .unit:hover .glare { opacity: 1; }
+    .unit-media h2 {
+      position: absolute; z-index: 3; left: 20px; bottom: 16px; pointer-events: none;
+      font-size: 26px; font-weight: 400; letter-spacing: -.01em; line-height: 1.1;
+    }
+    .unit-media h2 small { display: block; margin-bottom: 6px; font-size: 10px; letter-spacing: .32em; text-transform: uppercase; color: var(--gold); }
+    .unit.flash .unit-media { outline: 1px solid var(--gold); outline-offset: 6px; transition: outline-offset .5s var(--ease); }
+
+    .carousel, .track { position: absolute; inset: 0; }
+    .track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
+    .track::-webkit-scrollbar { display: none; }
+    .slide { flex: 0 0 100%; height: 100%; overflow: hidden; scroll-snap-align: start; scroll-snap-stop: always; }
+    .slide img { width: 100%; height: 100%; object-fit: cover; transition: transform 2.4s var(--ease); }
+    .unit:hover .slide img { transform: scale(1.06); }
+    .count {
+      position: absolute; z-index: 4; right: 18px; bottom: 18px; display: flex; align-items: center; gap: 10px;
+      font-size: 11px; letter-spacing: .2em; color: oklch(97% .01 75 / .75); font-variant-numeric: tabular-nums;
+    }
+    .count .bar { position: relative; width: 44px; height: 1px; background: oklch(97% .01 75 / .3); overflow: hidden; }
+    .count .bar i { position: absolute; inset: 0; background: var(--gold); transform-origin: left; transition: transform .6s var(--ease); }
+    .arrow {
+      position: absolute; z-index: 4; top: 42%; width: 40px; height: 40px; margin-top: -20px; display: none; place-items: center;
+      border: 1px solid oklch(97% .01 75 / .45); background: oklch(14% .015 60 / .4); color: var(--cream); cursor: pointer;
+      opacity: 0; transition: opacity .4s, background .3s, border-color .3s; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    }
+    .arrow.prev { left: 14px; } .arrow.next { right: 14px; }
+    .unit-media:hover .arrow, .arrow:focus-visible { opacity: 1; }
+    .arrow:hover { background: oklch(14% .015 60 / .75); border-color: var(--gold); }
+    @media (hover: hover) { .arrow { display: grid; } }
+
+    /* Ações da unidade: reservar em destaque e as demais uma embaixo da outra */
+    .actions { list-style: none; border: 1px solid var(--line); border-top: 0; background: oklch(14% .015 60 / .7); }
+    .actions a {
+      position: relative; display: flex; align-items: center; gap: 14px; min-height: 54px; padding: 0 20px;
+      font-size: 11px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase;
+      transition: background .4s var(--ease), color .4s var(--ease), padding .5s var(--ease);
+    }
+    .actions li + li a { border-top: 1px solid var(--line); }
+    .actions a::after {
+      content: ""; position: absolute; left: 0; bottom: -1px; width: 100%; height: 1px; background: var(--gold);
+      transform: scaleX(0); transform-origin: left; transition: transform .6s var(--ease); z-index: 1;
+    }
+    .actions a svg:first-child { font-size: 16px; color: var(--gold); }
+    .actions a span { flex: 1; }
+    .actions a .go { font-size: 15px; color: var(--muted); transition: transform .5s var(--ease), color .4s; }
+    .actions a:hover { background: var(--gold-tint); color: var(--gold); padding-left: 26px; }
+    .actions a:hover::after { transform: scaleX(1); }
+    .actions a:hover .go { transform: translateX(4px); color: var(--gold); }
+    .actions a.main { justify-content: center; min-height: 58px; background: var(--gold); color: var(--ink); letter-spacing: .3em; overflow: hidden; isolation: isolate; }
+    .actions a.main span { flex: none; }
+    .actions a.main::after { display: none; }
+    .actions a.main::before {
+      content: ""; position: absolute; inset: 0; z-index: -1; background: var(--cream);
+      transform: scaleX(0); transform-origin: left; transition: transform .6s var(--ease);
+    }
+    .actions a.main .go { color: var(--ink); }
+    .actions a.main:hover { color: var(--ink); padding-left: 20px; }
+    .actions a.main:hover::before { transform: scaleX(1); }
+
+    footer { border-top: 1px solid var(--line); padding: 30px 0 calc(32px + env(safe-area-inset-bottom)); }
+    footer img { width: 104px; margin: 0 auto; opacity: .9; }
+
+    /* Entradas */
+    .rise { animation: rise .9s var(--ease) both; animation-delay: var(--d, 0s); }
+    @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+    .js .reveal { opacity: 0; translate: 0 28px; transition: opacity 1.1s var(--ease), translate 1.1s var(--ease), transform .6s var(--ease); }
+    .js .reveal.in { opacity: 1; translate: 0 0; }
+
+    @media (min-width: 768px) { .hero { padding-top: 72px; } .hero .logo { width: 170px; } }
+    @media (prefers-reduced-motion: reduce) {
+      .rise, .link.featured::after { animation: none; }
+      .eyebrow::before, .eyebrow::after { animation: none; transform: none; }
+      .js .reveal { opacity: 1; translate: none; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <script>document.documentElement.classList.add('js');</script>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T6B7FF6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+    <symbol id="i-cheers" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><path d="M3.6 4.2 9 2.8l1.2 4.7a3.2 3.2 0 0 1-2.3 3.9l-.4.1a3.2 3.2 0 0 1-3.9-2.3zM7.5 11.6l1.6 6.1M6.6 18.6l5-1.3M20.4 4.2 15 2.8l-1.2 4.7a3.2 3.2 0 0 0 2.3 3.9l.4.1a3.2 3.2 0 0 0 3.9-2.3zM16.5 11.6l-1.6 6.1M17.4 18.6l-5-1.3"/></g></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4m-4 5.3.9 1.9 2 .3-1.45 1.4.35 2-1.8-.95-1.8.95.35-2L9.1 14l2-.3z"/></g></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.3 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10Z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 4h6a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4ZM20 4h-6a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h6Z"/></g></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5 8h14l-1 13H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></g></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5Z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></symbol>
+    <symbol id="i-moto" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M9 17h6l-3-7H8M15 6h3l2 8"/></g></symbol>
+  </svg>
+
+  <!-- Fundo animado (decorativo) -->
+  <div class="ambient" aria-hidden="true">
+    <canvas id="dust"></canvas>
+    <div class="spot"></div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <img class="logo rise" src="assets/logo-branca.png" alt="Vasto Restaurante" width="170" height="57">
+        <span class="eyebrow rise" style="--d:.08s">Brasília · DF</span>
+        <h1 class="rise" style="--d:.14s">Vasto em <span>Brasília</span></h1>
+
+        <nav class="links" aria-label="Links principais">
+          <!-- Item sazonal: trocar o href pela LP do Réveillon 2027 do Vasto quando ela existir -->
+          <a class="link featured rise" style="--d:.22s" href="https://evento.cocobambu.com/vasto-reveillon-2026-df" data-link="reveillon">
+            <svg aria-hidden="true"><use href="#i-cheers"/></svg><span class="label">Réveillon</span><svg class="go" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <a class="link rise" style="--d:.28s" href="https://vasto.cocobambubsb.com.br/" data-link="eventos">
+            <svg aria-hidden="true"><use href="#i-star"/></svg><span class="label">Eventos</span><svg class="go" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <a class="link rise" style="--d:.34s" href="https://areyouhappy.io/pesquisavasto" data-link="pesquisa">
+            <svg aria-hidden="true"><use href="#i-heart"/></svg><span class="label">Pesquisa de satisfação</span><svg class="go" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section" id="unidades">
+      <div class="container">
+        <div class="section-head reveal"><span class="eyebrow">Unidades</span></div>
+
+        <div class="units">
+          <article class="unit reveal" id="unidade-108-sul" data-unit="108-sul">
+            <div class="unit-media">
+              <div class="carousel" data-carousel aria-roledescription="carrossel" aria-label="Fotos do Vasto 108 Sul">
+                <div class="track">
+                  <figure class="slide"><img src="assets/108sul-int-1.jpg" alt="Salão do Vasto 108 Sul com mesas ocupadas" decoding="async" width="1000" height="667"></figure>
+                  <figure class="slide"><img src="assets/108sul-int-2.jpg" alt="Vasto 108 Sul: salão com poltronas e bar" loading="lazy" decoding="async" width="1000" height="667"></figure>
+                  <figure class="slide"><img src="assets/108sul-int-3.jpg" alt="Vasto 108 Sul: salão com vista para as árvores" loading="lazy" decoding="async" width="1000" height="667"></figure>
+                  <figure class="slide"><img src="assets/108sul-1.jpg" alt="Fachada do Vasto 108 Sul" loading="lazy" decoding="async" width="1000" height="667"></figure>
+                </div>
+              </div>
+              <span class="glare" aria-hidden="true"></span>
+              <h2><small>Vasto</small>108 Sul</h2>
+            </div>
+            <ul class="actions">
+              <li><a class="main" href="https://go.tagme.com.br/vasto108sul" data-link="108sul_reservas"><span>Reservar</span><svg class="go" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+              <li><a href="https://vasto.tagme.menu/menu/vasto-108-sul" data-link="108sul_cardapio"><svg aria-hidden="true"><use href="#i-book"/></svg><span>Cardápio</span><svg class="go" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+              <li><a href="https://api.whatsapp.com/send?phone=5561996388835" data-link="108sul_delivery"><svg aria-hidden="true"><use href="#i-moto"/></svg><span>Delivery</span><svg class="go" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+              <li><a href="https://www.ifood.com.br/delivery/brasilia-df/vasto-108-sul-asa-sul/54d72d12-1c15-4aa0-983e-e73d5d1b8c1f" data-link="108sul_ifood"><svg aria-hidden="true"><use href="#i-bag"/></svg><span>iFood</span><svg class="go" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+              <li><a href="https://qr.cocobambu.com/donos-vasasul" data-link="108sul_fale_dono"><svg aria-hidden="true"><use href="#i-chat"/></svg><span>Fale com o dono</span><svg class="go" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+            </ul>
+          </article>
+
+          <article class="unit reveal" id="unidade-brasilia-shopping" data-unit="brasilia-shopping">
+            <div class="unit-media">
+              <div class="carousel" data-carousel aria-roledescription="carrossel" aria-label="Fotos do Vasto Brasília Shopping">
+                <div class="track">
+                  <figure class="slide"><img src="assets/bsbshopping-int-1.jpg" alt="Salão do Vasto Brasília Shopping com mesas postas" decoding="async" width="1000" height="667"></figure>
+                  <figure class="slide"><img src="assets/bsbshopping-int-2.jpg" alt="Bar do Vasto Brasília Shopping" loading="lazy" decoding="async" width="1000" height="667"></figure>
+                  <figure class="slide"><img src="assets/bsbshopping-int-3.jpg" alt="Vasto Brasília Shopping: salão e adega" loading="lazy" decoding="async" width="570" height="380"></figure>
+                  <figure class="slide"><img src="assets/bsbshopping-1.jpg" alt="Fachada do Vasto Brasília Shopping" loading="lazy" decoding="async" width="1000" height="667"></figure>
+                </div>
+              </div>
+              <span class="glare" aria-hidden="true"></span>
+              <h2><small>Vasto</small>Brasília Shopping</h2>
+            </div>
+            <ul class="actions">
+              <li><a class="main" href="https://go.tagme.com.br/vastorestaurante" data-link="bsbshopping_reservas"><span>Reservar</span><svg class="go" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+              <li><a href="https://vasto.tagme.menu/menu/vasto-restaurante" data-link="bsbshopping_cardapio"><svg aria-hidden="true"><use href="#i-book"/></svg><span>Cardápio</span><svg class="go" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+              <li><a href="https://api.whatsapp.com/send?phone=556135447860" data-link="bsbshopping_delivery"><svg aria-hidden="true"><use href="#i-moto"/></svg><span>Delivery</span><svg class="go" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+              <li><a href="https://www.ifood.com.br/delivery/brasilia-df/vasto-restaurante-asa-norte/5b7b3163-c04e-4e6a-9f04-5051a2c6f2a4" data-link="bsbshopping_ifood"><svg aria-hidden="true"><use href="#i-bag"/></svg><span>iFood</span><svg class="go" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+              <li><a href="https://qr.cocobambu.com/donos-vbsb" data-link="bsbshopping_fale_dono"><svg aria-hidden="true"><use href="#i-chat"/></svg><span>Fale com o dono</span><svg class="go" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <img src="assets/logo-dourada.png" alt="Vasto Restaurante" width="104" height="35" loading="lazy">
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    window.dataLayer = window.dataLayer || [];
+    function track(event, params) {
+      window.dataLayer.push(Object.assign({ event: event }, params || {}));
+    }
+
+    // Clique em qualquer botão: evento "click_link" no GTM
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest('a[data-link]');
+      if (!a) return;
+      var unit = a.closest('[data-unit]');
+      track('click_link', {
+        link_id: a.dataset.link,
+        link_text: a.textContent.trim().replace(/\s+/g, ' '),
+        link_url: a.href,
+        unidade: unit ? unit.dataset.unit : ''
+      });
+    });
+
+    // Poeira dourada: poucas partículas, lentas e discretas (levemente deslocadas pelo mouse)
+    (function dust() {
+      var canvas = document.getElementById('dust');
+      var ctx = canvas.getContext('2d');
+      var dpr = Math.min(window.devicePixelRatio || 1, 2), w, h, dots = [], mx = 0, my = 0, ox = 0, oy = 0, running = true;
+      function size() {
+        w = canvas.clientWidth; h = canvas.clientHeight;
+        canvas.width = w * dpr; canvas.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        var n = Math.round(Math.min(34, Math.max(14, w * h / 40000)));
+        dots = [];
+        for (var i = 0; i < n; i++) dots.push({ x: Math.random() * w, y: Math.random() * h, r: .5 + Math.random() * 1.1, v: .04 + Math.random() * .12, z: .3 + Math.random(), p: Math.random() * 6.28 });
+      }
+      function frame(t) {
+        ctx.clearRect(0, 0, w, h);
+        ox += (mx - ox) * .04; oy += (my - oy) * .04;
+        dots.forEach(function (d) {
+          if (!reduceMotion) { d.y -= d.v; if (d.y < -10) { d.y = h + 10; d.x = Math.random() * w; } }
+          var a = .12 + .28 * (reduceMotion ? .5 : (Math.sin(t / 1400 + d.p) + 1) / 2);
+          var x = d.x - ox * 14 * d.z, y = d.y - oy * 14 * d.z;
+          ctx.beginPath(); ctx.arc(x, y, d.r, 0, 6.283);
+          ctx.fillStyle = 'rgba(214, 170, 96,' + a.toFixed(3) + ')';
+          ctx.shadowColor = 'rgba(214, 170, 96, .7)'; ctx.shadowBlur = 5 * d.r;
+          ctx.fill();
+        });
+        if (running && !reduceMotion) requestAnimationFrame(frame);
+      }
+      size();
+      window.addEventListener('resize', size);
+      if (finePointer) window.addEventListener('pointermove', function (e) { mx = e.clientX / w - .5; my = e.clientY / h - .5; }, { passive: true });
+      document.addEventListener('visibilitychange', function () {
+        var was = running; running = !document.hidden;
+        if (running && !was && !reduceMotion) requestAnimationFrame(frame);
+      });
+      requestAnimationFrame(frame);
+    })();
+
+    // Luz âmbar que acompanha o mouse pelo fundo
+    if (finePointer && !reduceMotion) {
+      var ambient = document.querySelector('.ambient'), raf = 0, px = 0, py = 0;
+      window.addEventListener('pointermove', function (e) {
+        px = e.clientX; py = e.clientY;
+        if (raf) return;
+        raf = requestAnimationFrame(function () {
+          raf = 0;
+          ambient.style.setProperty('--mx', px + 'px');
+          ambient.style.setProperty('--my', py + 'px');
+          ambient.classList.add('lit');
+        });
+      }, { passive: true });
+      document.documentElement.addEventListener('pointerleave', function () { ambient.classList.remove('lit'); });
+    }
+
+    // Cartões: inclinação 3D sutil + reflexo de luz sobre a foto
+    if (finePointer && !reduceMotion) {
+      document.querySelectorAll('.unit').forEach(function (card) {
+        var media = card.querySelector('.unit-media');
+        card.addEventListener('pointermove', function (e) {
+          var r = card.getBoundingClientRect();
+          var x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+          card.classList.add('tilting');
+          card.style.setProperty('--rx', (-y * 3).toFixed(2) + 'deg');
+          card.style.setProperty('--ry', (x * 3.5).toFixed(2) + 'deg');
+          var m = media.getBoundingClientRect();
+          media.style.setProperty('--gx', (e.clientX - m.left) + 'px');
+          media.style.setProperty('--gy', (e.clientY - m.top) + 'px');
+        });
+        card.addEventListener('pointerleave', function () {
+          card.classList.remove('tilting');
+          card.style.setProperty('--rx', '0deg');
+          card.style.setProperty('--ry', '0deg');
+        });
+      });
+    }
+
+    // Entrada em cascata ao rolar (com garantia: tudo aparece mesmo se o observer falhar)
+    var revealEls = document.querySelectorAll('.reveal');
+    function showAll() { revealEls.forEach(function (el) { el.classList.add('in'); }); }
+    if ('IntersectionObserver' in window && !reduceMotion) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.filter(function (en) { return en.isIntersecting; }).forEach(function (en, i) {
+          setTimeout(function () { en.target.classList.add('in'); }, i * 140);
+          io.unobserve(en.target);
+        });
+      }, { rootMargin: '0px 0px -8% 0px' });
+      revealEls.forEach(function (el) { io.observe(el); });
+      setTimeout(showAll, 4000);
+    } else {
+      showAll();
+    }
+
+    // QR codes antigos: ?unidade=108-sul | asa-sul | brasilia-shopping rola até a unidade certa
+    var aliases = { '108-sul': '108-sul', 'asa-sul': '108-sul', 'brasilia-shopping': 'brasilia-shopping', 'bsb-shopping': 'brasilia-shopping' };
+    var pick = aliases[(new URLSearchParams(location.search).get('unidade') || '').toLowerCase()];
+    if (pick) {
+      track('unit_select', { unidade: pick, origem: 'url' });
+      var el = document.getElementById('unidade-' + pick);
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      showAll();
+      function jumpTo() { el.scrollIntoView({ behavior: 'instant', block: 'start' }); }
+      requestAnimationFrame(jumpTo);
+      window.addEventListener('load', function () {
+        setTimeout(jumpTo, 0);
+        el.classList.add('flash');
+        setTimeout(function () { el.classList.remove('flash'); }, 1800);
+      });
+    }
+
+    // Carrossel infinito e manual com contador "01 — 04" e barra de progresso
+    document.querySelectorAll('[data-carousel]').forEach(function (car) {
+      var rail = car.querySelector('.track');
+      var total = rail.children.length;
+      if (total < 2) return;
+      var unitName = car.closest('.unit').dataset.unit;
+
+      var headClone = rail.lastElementChild.cloneNode(true);
+      var tailClone = rail.firstElementChild.cloneNode(true);
+      [headClone, tailClone].forEach(function (c) { c.setAttribute('aria-hidden', 'true'); });
+      rail.insertBefore(headClone, rail.firstElementChild);
+      rail.appendChild(tailClone);
+
+      function pad(n) { return (n < 10 ? '0' : '') + n; }
+      var count = document.createElement('div');
+      count.className = 'count';
+      count.setAttribute('aria-live', 'polite');
+      count.innerHTML = '<span class="cur">01</span><span class="bar"><i></i></span><span>' + pad(total) + '</span>';
+      var cur = count.querySelector('.cur'), fill = count.querySelector('.bar i');
+      var prev = document.createElement('button');
+      prev.className = 'arrow prev'; prev.type = 'button'; prev.setAttribute('aria-label', 'Foto anterior');
+      prev.innerHTML = '<svg aria-hidden="true"><use href="#i-left"/></svg>';
+      var next = document.createElement('button');
+      next.className = 'arrow next'; next.type = 'button'; next.setAttribute('aria-label', 'Próxima foto');
+      next.innerHTML = '<svg aria-hidden="true"><use href="#i-right"/></svg>';
+      car.parentNode.append(count, prev, next);
+
+      var pos = 1, shown = -1, seen = false;
+      function width() { return rail.clientWidth; }
+      function jump(p) { pos = p; rail.scrollTo({ left: p * width(), behavior: 'auto' }); }
+      function go(p) { pos = p; rail.scrollTo({ left: p * width(), behavior: reduceMotion ? 'auto' : 'smooth' }); }
+      function render() {
+        var real = ((pos - 1) % total + total) % total;
+        if (real === shown) return;
+        shown = real;
+        cur.textContent = pad(real + 1);
+        fill.style.transform = 'scaleX(' + ((real + 1) / total) + ')';
+      }
+      function settle() {
+        pos = Math.round(rail.scrollLeft / width());
+        if (pos <= 0) jump(total);
+        else if (pos >= total + 1) jump(1);
+        render();
+      }
+      var raf2, settleTimer;
+      rail.addEventListener('scroll', function () {
+        cancelAnimationFrame(raf2);
+        raf2 = requestAnimationFrame(function () { pos = Math.round(rail.scrollLeft / width()); render(); });
+        clearTimeout(settleTimer);
+        settleTimer = setTimeout(settle, 140);
+      }, { passive: true });
+      window.addEventListener('resize', function () { jump(pos); });
+
+      function userMoved() { if (!seen) { seen = true; track('carousel_swipe', { unidade: unitName }); } }
+      prev.addEventListener('click', function () { go(pos - 1); userMoved(); });
+      next.addEventListener('click', function () { go(pos + 1); userMoved(); });
+      rail.addEventListener('touchmove', userMoved, { passive: true, once: true });
+
+      jump(1);
+      render();
+    });
+  })();
+  </script>
+</body>
+</html>

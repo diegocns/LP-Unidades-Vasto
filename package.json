@@ -1,0 +1,7 @@
+{
+  "name": "lp-unidades-vasto",
+  "private": true,
+  "scripts": {
+    "build": "rm -rf dist && mkdir dist && cp -r docs/. dist/ && cp -r docs/. ."
+  }
+}
